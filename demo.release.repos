@@ -1,30 +1,31 @@
-# 릴리스용: 태그로 버전 고정 (재현 가능한 빌드)
+# 릴리스용: 각 레포의 태그로 버전 고정 (재현 가능한 빌드)
+# 레포는 비공개 — SSH 키 또는 CI 토큰 필요 (README 참고)
 repositories:
   core/demo_interfaces:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: demo_interfaces/v0.1.0
+    url: git@github.com:Juhyeong-Park/demo_interfaces.git
+    version: v0.1.0
   core/demo_localization:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: demo_localization/v0.1.0
+    url: git@github.com:Juhyeong-Park/demo_localization.git
+    version: v0.1.0
   core/demo_navigation:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: demo_navigation/v0.1.0
+    url: git@github.com:Juhyeong-Park/demo_navigation.git
+    version: v0.1.0
   core/demo_safety:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: demo_safety/v0.1.0
+    url: git@github.com:Juhyeong-Park/demo_safety.git
+    version: v0.1.0
   core/demo_control:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: demo_control/v0.1.0
+    url: git@github.com:Juhyeong-Park/demo_control.git
+    version: v0.1.0
   core/demo_bringup:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: demo_bringup/v0.1.0
+    url: git@github.com:Juhyeong-Park/demo_bringup.git
+    version: v0.1.0
   third_party/demo_mathlib:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: demo_mathlib/v1.1.0
+    url: git@github.com:Juhyeong-Park/demo_mathlib.git
+    version: v1.1.0

@@ -1,30 +1,31 @@
-# 개발용: 각 레포의 개발 브랜치 최신을 가져온다
+# 개발용: 각 레포의 main 최신을 가져온다
+# 레포는 비공개 — SSH 키 또는 CI 토큰 필요 (README 참고)
 repositories:
   core/demo_interfaces:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: pkg/demo_interfaces
+    url: git@github.com:Juhyeong-Park/demo_interfaces.git
+    version: main
   core/demo_localization:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: pkg/demo_localization
+    url: git@github.com:Juhyeong-Park/demo_localization.git
+    version: main
   core/demo_navigation:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: pkg/demo_navigation
+    url: git@github.com:Juhyeong-Park/demo_navigation.git
+    version: main
   core/demo_safety:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: pkg/demo_safety
+    url: git@github.com:Juhyeong-Park/demo_safety.git
+    version: main
   core/demo_control:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: pkg/demo_control
+    url: git@github.com:Juhyeong-Park/demo_control.git
+    version: main
   core/demo_bringup:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: pkg/demo_bringup
+    url: git@github.com:Juhyeong-Park/demo_bringup.git
+    version: main
   third_party/demo_mathlib:
     type: git
-    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
-    version: pkg/demo_mathlib
+    url: git@github.com:Juhyeong-Park/demo_mathlib.git
+    version: main

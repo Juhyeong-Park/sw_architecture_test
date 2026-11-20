@@ -20,6 +20,14 @@ jobs:
         run: |
           apt-get update
           apt-get install -y python3-vcstool ros-humble-turtlesim
+      - name: Auth for private repos (SSH url -> HTTPS + token)
+        env:
+          TOKEN: ${{ secrets.DEMO_REPOS_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::error::secret DEMO_REPOS_TOKEN 이 없습니다 (README 'CI 설정' 참고)"; exit 1
+          fi
+          git config --global url."https://x-access-token:${TOKEN}@github.com/".insteadOf "git@github.com:"
       - name: Import & build
         shell: bash
         run: ./build.sh ${{ matrix.repos }}

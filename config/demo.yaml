@@ -1,0 +1,19 @@
+demo_localization:
+  ros__parameters:
+    noise_std: 0.02
+
+demo_navigation:
+  ros__parameters:
+    waypoints: [2.0, 2.0, 9.0, 2.0, 9.0, 9.0, 2.0, 9.0]
+    max_linear: 2.0
+    max_angular: 2.0
+    tolerance: 0.2
+
+demo_safety:
+  ros__parameters:
+    stop_margin: 0.8
+
+demo_control:
+  ros__parameters:
+    cmd_timeout: 0.5
+    safety_timeout: 0.5

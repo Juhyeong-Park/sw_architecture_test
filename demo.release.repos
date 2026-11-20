@@ -1,0 +1,30 @@
+# 릴리스용: 태그로 버전 고정 (재현 가능한 빌드)
+repositories:
+  core/demo_interfaces:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: demo_interfaces/v0.1.0
+  core/demo_localization:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: demo_localization/v0.1.0
+  core/demo_navigation:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: demo_navigation/v0.1.0
+  core/demo_safety:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: demo_safety/v0.1.0
+  core/demo_control:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: demo_control/v0.1.0
+  core/demo_bringup:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: demo_bringup/v0.1.0
+  third_party/demo_mathlib:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: demo_mathlib/v1.1.0

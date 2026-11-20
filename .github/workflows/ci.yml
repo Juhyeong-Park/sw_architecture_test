@@ -1,0 +1,25 @@
+name: integration-build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    container: ros:humble
+    strategy:
+      fail-fast: false
+      matrix:
+        repos: [demo.repos, demo.release.repos]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          apt-get update
+          apt-get install -y python3-vcstool ros-humble-turtlesim
+      - name: Import & build
+        shell: bash
+        run: ./build.sh ${{ matrix.repos }}

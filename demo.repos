@@ -1,0 +1,30 @@
+# 개발용: 각 레포의 개발 브랜치 최신을 가져온다
+repositories:
+  core/demo_interfaces:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: pkg/demo_interfaces
+  core/demo_localization:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: pkg/demo_localization
+  core/demo_navigation:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: pkg/demo_navigation
+  core/demo_safety:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: pkg/demo_safety
+  core/demo_control:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: pkg/demo_control
+  core/demo_bringup:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: pkg/demo_bringup
+  third_party/demo_mathlib:
+    type: git
+    url: https://github.com/Juhyeong-Park/sw_architecture_test.git
+    version: pkg/demo_mathlib

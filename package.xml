@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>demo_mathlib</name>
+  <version>1.0.0</version>
+  <description>Demo header-only math library (plays the third-party role)</description>
+  <maintainer email="dev@example.com">imova-demo</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>demo_navigation</name>
+  <version>0.1.0</version>
+  <description>Demo navigation (waypoint follower)</description>
+  <maintainer email="dev@example.com">imova-demo</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend version_gte="1.1.0">demo_mathlib</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

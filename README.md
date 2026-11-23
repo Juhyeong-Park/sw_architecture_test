@@ -55,6 +55,29 @@ ros2 service call /demo/estop std_srvs/srv/Trigger          # 비상정지 → �
 ros2 service call /demo/safety_reset std_srvs/srv/Trigger   # 해제 → 주행 재개
 ```
 
+## Docker
+
+이미지 안에 7개 레포를 받아 빌드한 결과(`install/`)만 담는다. 빌드 단계(소스 / 컴파일)는 최종 이미지에 남지 않는다.
+
+```bash
+# 빌드 — 비공개 레포 인증 (둘 중 하나, 키 / 토큰은 이미지에 남지 않음)
+docker build --ssh default --build-arg REPOS=demo.release.repos -t imova-demo:0.1.0 .
+GH_TOKEN=<토큰> docker build --secret id=gh_token,env=GH_TOKEN \
+  --build-arg REPOS=demo.release.repos -t imova-demo:0.1.0 .
+
+# 실행
+docker/run.sh imova-demo:0.1.0            # DISPLAY 있으면 turtlesim 창, 없으면 창 없이
+docker/run.sh imova-demo:0.1.0 headless
+
+# 이미지에 들어간 레포별 커밋
+docker run --rm imova-demo:0.1.0 cat /ws/exact.repos
+```
+
+- 호스트에서 `ros2 topic echo /turtle1/pose`, `ros2 service call /demo/estop ...` 로 컨테이너에 바로 접근한다 (`--net=host`).
+- 컨테이너는 **호스트 사용자로** 실행한다 (`run.sh` 의 `--user`). root 로 실행하면 Fast DDS 공유메모리 파일을 호스트가 못 읽어 호스트 쪽 `ros2` 명령이 데이터를 받지 못한다.
+- snap 으로 설치한 docker 는 SSH agent 전달과 `/tmp` 아래 빌드 컨텍스트를 지원하지 않는다 → 토큰 방식, 홈 디렉터리에서 빌드.
+- GUI 실행 시 `libGL error: failed to load driver` 경고는 소프트웨어 렌더링으로 넘어간다는 뜻이며 동작에는 영향 없음.
+
 ## 확인 시나리오
 
 | # | 확인 항목 | 방법 | 기대 결과 |
@@ -69,6 +92,7 @@ ros2 service call /demo/safety_reset std_srvs/srv/Trigger   # 해제 → 주행 
 | 8 | Safety fail-safe | `demo_safety` 노드만 종료 | `safety_timeout`(0.5 s) 후 `demo_control` 이 정지 |
 | 9 | CI | `main` 에 push / PR | GitHub Actions 가 두 `.repos` 로 각각 통합 빌드 (비공개 레포는 토큰으로 접근) |
 | 10 | 접근 권한 | SSH 키 없는 환경에서 `./build.sh` | 비공개 레포 import 실패 — 레포별 권한 관리 확인 |
+| 11 | Docker 이미지 | `docker build` → `docker/run.sh` | 7개 레포가 담긴 이미지로 주행, 호스트에서 E-stop 호출 가능 |
 
 ## 새 버전 릴리스 절차 (예: demo_mathlib)
 

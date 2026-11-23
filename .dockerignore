@@ -1,0 +1,6 @@
+src/
+build/
+install/
+log/
+.git/
+.last_build.repos
